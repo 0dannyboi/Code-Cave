@@ -1,0 +1,17 @@
+Animate[Show[Graphics[Circle[{1, 1}, 0.08]], 
+  Graphics[Circle[{1, 3}, 0.08]], Graphics[Circle[{1, 5}, 0.08]], 
+  Graphics[Circle[{1, 7}, 0.08]], 
+  Graphics[{Red, Circle[{1, 1}, 0.08 + t]}], 
+  Graphics[{Red, Circle[{1, 3}, 0.08 + t]}], 
+  Graphics[{Red, Circle[{1, 5}, 0.08 + t]}], 
+  Graphics[{Red, Circle[{1, 7}, 0.08 + t]}], 
+  Graphics[Circle[{2, 0.5 t + 1}, 0.08]], 
+  Graphics[Circle[{2, 3 + 0.5 t}, 0.08]], 
+  Graphics[Circle[{2, 5 + 0.5 t}, 0.08]], 
+  Graphics[Circle[{2, 0.5 t + 7}, 0.08]], 
+  Graphics[{Blue, Circle[{2, 0.5 t + 1}, 0.08 + t]}], 
+  Graphics[{Blue, Circle[{2, 0.5 t + 3}, 0.08 + t]}], 
+  Graphics[{Blue, Circle[{2, 0.5 t + 5}, 0.08 + t]}], 
+  Graphics[{Blue, Circle[{2, 0.5 t + 7}, 0.08 + t]}], 
+  Graphics[{Yellow, Circle[{4, 0.5 t + 1}, 0.08]}]], {t, 0, 15}]
+© 2020 GitHub, Inc.
