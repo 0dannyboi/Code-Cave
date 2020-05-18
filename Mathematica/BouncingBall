@@ -1,0 +1,10 @@
+h = 20;
+t0 = 10;(*time of flight*)
+ball[t_] = 
+ y[t] /. NDSolve[{y''[t] == -9.81, y[0] == h, y'[0] == 0, 
+     WhenEvent[y[t] == 0, y'[t] -> -RandomReal[{0.6, 0.8}] y'[t]]}, 
+    y, {t, 0, t0}][[1]];
+
+Animate[Graphics3D[Sphere[{0, 0, ball[t]}, 0.5], 
+  PlotRange -> {{-1, 1}, {-1, 1}, {-0.5, h + 0.5}}], {t, 0, 10, 
+  0.00000000000001}]
