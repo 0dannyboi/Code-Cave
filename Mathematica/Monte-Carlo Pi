@@ -1,0 +1,24 @@
+array1 = {{0, 0}} ;
+circle1 = {{0, 0}} ; 
+outofcircle = {{0.8, 0.8}};
+xposition[o_] := Extract[Extract[array1, o], 1];
+yposition[o_] := Extract[Extract[array1, o], 2];
+distance[o_] := Sqrt[(xposition[o])^2 + (yposition[o])^2];
+GenerateArray[n_] := 
+  For[k = 0, k <= n, k++, 
+   array1 = 
+    Append[array1, {RandomReal[{-1, 1}], RandomReal[{-1, 1}]}]]; 
+GenerateCircle[n_] := 
+  For[l = 2, l <= (n + 2), l++, 
+   If[distance[l] <= 1, 
+    circle1 = Append[circle1, {xposition[l], yposition[l]}], 
+    random++]];
+GenerateOutCircle[n_] := 
+  For[m = 2, m <= (n + 2), m++, 
+   If[dist[m] > 1, outofcircle = Append[outofcircle, {x[m], y[m]}], 
+    random++]];
+circle1plot[n_] := 
+  ListPlot[circle1, PlotStyle -> Red, AspectRatio -> 1];
+outcircleplot[n_] := 
+  ListPlot[outofcircle, PlotStyle -> Blue, AspectRatio -> 1];
+pi[n_] := N[4*(Length[circle1] - 1)/(Length[array1] - 1)];
