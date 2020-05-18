@@ -1,0 +1,16 @@
+(* Initializes graphics *)
+st = ContourPlot[(x^2)/4 + (y^2)/9, {x, -2, 2}, {y, 0, 3}, 
+  ContourStyle -> White, Contours -> {1/2, 1}, 
+  ContourShading -> {White, None}] 
+  
+TP9 = {-2,0} and Extract[s, {1, t+1, 6} ]
+AF7 = {-1, 2.5} and Extract[s, {1, t+1, 7}] 
+AF8 = {1, 2.5} and Extract[s, {1, t+1, 8}]
+TP10 = {2,0} and Extrat[s, {1, t+1, 9}] *) 
+
+(* Interpolation function of specific brainwave frequencies *)
+if = Interpolation[{{-2, 0, Extract[s, {1, 2, 6}]}, {-1, 2.5, 
+     Extract[s, {1, 2, 7}]}, {1, 2.5, Extract[s, {1, 2, 8}]}, {2, 0, 
+     Extract[s, {1, 2, 9}]}}, InterpolationOrder -> All];  
+tt = DensityPlot[if[x, y], {x, -2, 2}, {y, 0, 3}]; 
+Show[tt, st]
