@@ -59,14 +59,6 @@ void loop() {
       val = val + (sensorValue / n1);
     }
     log_val = log(val) / log(3);
-    //Serial.print(log_val);
-    //Serial.print(",");
-    //Serial.print(mini);
-    //Serial.print(",");
-    //Serial.print(maxi);
-    //Serial.print(",");
-    //Serial.print(avg);
-    //Serial.print(",");
     int brightness = map(int(24 * log_val), int(30 * mini), int(30 * maxi), 0, 10);
     if (brightness > 10)
     {
